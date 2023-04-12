@@ -1,24 +1,11 @@
 import "react-native-reanimated";
 import "react-native-gesture-handler";
-
-import { StatusBar } from "expo-status-bar";
-
-import {
-  Image,
-  Pressable,
-  ScrollView,
-  Text,
-  View,
-  StyleSheet,
-} from "react-native";
-import { styled, useColorScheme } from "nativewind";
-import { MotiImage } from "moti";
-
-const StyledPressable = styled(Pressable);
-const StyledText = styled(Text);
-
 import Button from "./components/Button";
 import ThemeToggler from "./components/ThemeToggler";
+import { StatusBar } from "expo-status-bar";
+import { MotiImage } from "moti";
+import { useColorScheme } from "nativewind";
+import { Text, View } from "react-native";
 
 export default function App() {
   const { colorScheme, toggleColorScheme } = useColorScheme();

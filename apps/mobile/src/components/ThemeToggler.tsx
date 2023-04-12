@@ -1,6 +1,6 @@
+import { styled } from "nativewind";
 import { FC } from "react";
 import { Pressable, Text, View } from "react-native";
-import { styled, useColorScheme } from "nativewind";
 
 const StyledPressable = styled(Pressable);
 const StyledText = styled(Text);
@@ -16,7 +16,7 @@ const ThemeToggler: FC<ThemeProps> = ({ colorScheme, toggleColorScheme }) => {
       <StyledPressable onPress={toggleColorScheme}>
         <StyledText
           selectable={false}
-          className="transition-all dark:text-white"
+          className="transition-all dark:text-slate-200"
         >
           {`Try clicking me! ${colorScheme === "dark" ? "🌙" : "🌞"}`}
         </StyledText>
