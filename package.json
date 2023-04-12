@@ -27,7 +27,7 @@
     "turbo": "latest",
     "typescript": "^5.0.4"
   },
-  "name": "my-turborepo",
+  "name": "rez-builder",
   "packageManager": "yarn@1.22.19",
   "workspaces": [
     "apps/*",
