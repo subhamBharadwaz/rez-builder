@@ -2,20 +2,43 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "build:mobile": "turbo build --filter=\"...{./apps/mobile}\"",
+    "test": "turbo run test",
+    "build:web": "turbo build --filter=\"...{./apps/web}\"",
+    "dev": "turbo run dev --parallel",
+    "dev:mobile": "turbo dev --filter=\"{./apps/mobile}...\"",
+    "dev:web": "turbo dev --filter=\"{./apps/web}...\"",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-tailwindcss": "^3.11.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "prettier-plugin-tailwindcss": "^0.2.7",
+    "turbo": "latest",
+    "typescript": "^5.0.4"
   },
   "name": "my-turborepo",
   "packageManager": "yarn@1.22.19",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  }
 }
